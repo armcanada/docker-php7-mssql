@@ -19,7 +19,8 @@ RUN yum install -y \
     php-common php-fpm \
     php-mbstring php-mysql \
     php-odbc php-pdo php-xml \
-    freetds php-pdo_dblib httpd
+    freetds php-pdo_dblib httpd \
+    git
 
 #   Adds Composer installer to the container
 ADD composer.sh /usr/local/bin/setup_composer
