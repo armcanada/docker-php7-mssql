@@ -20,6 +20,7 @@ RUN yum install -y \
     php-mbstring php-mysql \
     php-odbc php-pdo php-xml \
     freetds php-pdo_dblib httpd \
+    php-pecl-zip \
     git
 
 #   Adds Composer installer to the container
@@ -39,6 +40,10 @@ ADD php.ini /etc/php.ini
 #   Moves the composer executable to a PATH folder
 RUN mv composer.phar /usr/local/bin/composer
 
+#   Adds server start script
+ADD start.sh /usr/local/bin/start_httpd
+RUN chmod +x /usr/local/bin/start_httpd
+
 #   Creates app Direcrory
 RUN mkdir /app
 RUN mkdir /app/public
@@ -46,5 +51,7 @@ RUN mkdir /app/public
 #   Sets the working directory
 WORKDIR /app
 
+EXPOSE 80 443
+
 #   Starts HTTPD
-CMD ["/usr/sbin/httpd", "-DFOREGROUND"]
+CMD ["start_httpd"]
