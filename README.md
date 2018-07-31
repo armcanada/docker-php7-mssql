@@ -14,6 +14,7 @@ Docker image for PHP7 with MSSQL drivers running on a CentOS host.
 - php-7
 - freetds
 - composer
+- google chrome
 
 #### PHP extensions
 - php-gd
@@ -35,3 +36,4 @@ The official folder serviced by Apache is `/app/public`. The setup is primarily 
 #### Laravel case
 
 If you are deploying a Laravel project, you may need to use `artisan`. To do so, you only have to run `docker exec -it my_container php artisan {command}`. The working directory is by default set to `/app`
+Also, Google Chrome is provided to allow the use of Dusk
