@@ -23,6 +23,15 @@ RUN yum install -y \
     php-pecl-zip \
     git
 
+#   Install Google Chrome
+RUN echo $'[google-chrome]\n\
+name=google-chrome\n\
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64\n\
+enabled=1\n\
+gpgcheck=1\n\
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub' >> /etc/yum.repos.d/google-chrome.repo
+RUN yes | yum install -y google-chrome-stable
+
 #   Adds Composer installer to the container
 ADD composer.sh /usr/local/bin/setup_composer
 RUN chmod +x /usr/local/bin/setup_composer
