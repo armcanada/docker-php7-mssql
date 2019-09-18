@@ -11,7 +11,7 @@ RUN rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 #   Updates the container
 RUN yum update -y
 RUN yum install yum-utils
-RUN yum-config-manager --enable remi-php71
+RUN yum-config-manager --enable remi-php73
 
 #   Install all the requirement for HTTPD, PHP and MSSQL driver
 RUN yum install -y \
