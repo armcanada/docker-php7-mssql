@@ -1,4 +1,4 @@
-IMAGE_TAG=armcanada/php7-mssql:latest
+IMAGE_TAG=armcanada/php7-mssql:php-73
 
 .PHONY: build
 build:
