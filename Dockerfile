@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM centos:centos8
 
 # ARM Canada
 MAINTAINER aduhaime@armcanada.ca
