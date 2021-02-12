@@ -4,14 +4,14 @@ FROM centos:centos8
 MAINTAINER aduhaime@armcanada.ca
 
 #   Installs the EPEL and Webtatic repositories
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-RUN rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+RUN rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-8.rpm
 
 #   Updates the container
 RUN yum update -y
-RUN yum install yum-utils
-RUN yum-config-manager --enable remi-php74
+RUN yum install yum-utils -y
+RUN dnf module install php:remi-7.4 -y
 
 #   Install all the requirement for HTTPD, PHP and MSSQL driver
 RUN yum install -y \
