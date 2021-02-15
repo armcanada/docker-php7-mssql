@@ -49,7 +49,7 @@ RUN mkdir /app
 RUN mkdir /app/public
 
 RUN mkdir -p /run/php-fpm
-RUN phpfpm
+RUN php-fpm
 
 #   Sets the working directory
 WORKDIR /app
