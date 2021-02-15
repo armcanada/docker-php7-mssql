@@ -48,6 +48,8 @@ RUN chmod +x /usr/local/bin/start_httpd
 RUN mkdir /app
 RUN mkdir /app/public
 
+RUN mkdir -p /run/php-fpm
+
 #   Sets the working directory
 WORKDIR /app
 
