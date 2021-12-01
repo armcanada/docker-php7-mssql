@@ -11,7 +11,7 @@ RUN rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-8.rpm
 #   Updates the container
 RUN yum update -y
 RUN yum install yum-utils -y
-RUN dnf module install php:remi-7.4 -y
+RUN dnf module install php:remi-8.1 -y
 
 #   Install all the requirement for HTTPD, PHP and MSSQL driver
 RUN yum install -y \
